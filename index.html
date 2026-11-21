@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Inova.AI — a IA que trabalha dentro do PJe</title>
-<meta name="description" content="Assistente jurídico com inteligência artificial que abre ao lado dos autos no PJe: lê o processo, resume, minuta e usa os seus assistentes virtuais.">
+<meta name="description" content="IA personalizada para todo o sistema de justiça: advogados, procuradores públicos, promotores e defensores públicos. Abre ao lado dos autos no PJe, lê o processo, resume e minuta.">
 <meta name="theme-color" content="#0B0E17">
 <link rel="icon" href="img/brasao.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,9 +35,9 @@
 <!-- ============ ABERTURA ============ -->
 <section class="abertura" id="inicio">
   <div class="abertura__texto">
-    <p class="selo surge" style="--d:0"><span class="selo__ponto"></span>Extensão para o Google Chrome · PJe</p>
+    <p class="selo surge" style="--d:0"><span class="selo__ponto"></span>IA personalizada para o sistema de justiça</p>
     <h1 class="surge" style="--d:1">A IA que trabalha <mark>dentro</mark> do PJe.</h1>
-    <p class="lead surge" style="--d:2">O Inova.AI abre ao lado dos autos, lê o processo que está na tela e responde, resume e minuta com base nele. Sem copiar e colar peça por peça.</p>
+    <p class="lead surge" style="--d:2">Para advogados, procuradores públicos, promotores e defensores públicos. O Inova.AI abre ao lado dos autos, lê o processo que está na tela e responde, resume e minuta com base nele, do seu jeito.</p>
     <div class="abertura__cta surge" style="--d:3">
       <a class="botao botao--azul" href="#planos">Adquira o seu já <span aria-hidden="true">→</span></a>
       <a class="botao botao--linha" href="#como">Ver como funciona</a>
@@ -212,21 +212,27 @@
     <p class="mov"><span>07</span>Planos</p>
     <h2 class="rola">Do teste gratuito<br><mark>ao contrato sob medida.</mark></h2>
   </header>
-  <div class="planos" id="lista-planos"></div>
-  <p class="nota">Pagamento por cartão de crédito, na página segura do Stripe. Renovação automática; cancele quando quiser.</p>
+  <div class="ciclo rola" role="group" aria-label="Forma de pagamento">
+    <button type="button" data-ciclo="anual" aria-pressed="true">Anual <small>−12%</small></button>
+    <button type="button" data-ciclo="mensal" aria-pressed="false">Mensal</button>
+  </div>
+  <div class="planos" id="lista-planos" aria-live="polite"></div>
+  <p class="nota">No anual, o valor sai 12% menor que doze mensalidades. Pagamento por cartão de crédito, na página segura do Stripe. Renovação automática; cancele quando quiser.</p>
 </section>
 
 <!-- ============ 08 PARA QUEM ============ -->
 <section class="secao secao--tinta" id="publico">
   <header class="cab">
     <p class="mov"><span>08</span>Para quem</p>
-    <h2 class="rola">Para quem trabalha<br><mark>no processo eletrônico.</mark></h2>
+    <h2 class="rola">Para todo o<br><mark>sistema de justiça.</mark></h2>
   </header>
-  <div class="tres">
-    <article class="cartao cartao--tinta rola"><h3>Advocacia</h3><p>Leitura dos autos, resumo do andamento e minuta da peça, sem sair do PJe.</p></article>
-    <article class="cartao cartao--tinta rola"><h3>Escritórios</h3><p>Plano Enterprise, com personalização para a banca e suporte negociado.</p></article>
-    <article class="cartao cartao--tinta rola"><h3>Procuradorias e órgãos</h3><p>Para o volume alto de processos: relatório rápido dos autos e contratação sob medida.</p></article>
+  <div class="quatro">
+    <article class="cartao cartao--tinta rola"><p class="cartao__n">01</p><h3>Advogados</h3><p>Leitura dos autos, resumo do andamento e minuta da peça, sem sair do PJe. Para quem advoga sozinho ou em escritório.</p></article>
+    <article class="cartao cartao--tinta rola"><p class="cartao__n">02</p><h3>Procuradores públicos</h3><p>Volume alto de processos: relatório rápido dos autos e assistentes com as teses e os modelos da procuradoria.</p></article>
+    <article class="cartao cartao--tinta rola"><p class="cartao__n">03</p><h3>Promotores</h3><p>Leitura do inquérito e do processo, resumo das provas e apoio à manifestação, com os modelos do gabinete.</p></article>
+    <article class="cartao cartao--tinta rola"><p class="cartao__n">04</p><h3>Defensores públicos</h3><p>Muitos assistidos e pouco tempo: o essencial de cada processo em minutos e a peça a partir das próprias teses.</p></article>
   </div>
+  <p class="nota nota--tinta rola">Assistentes personalizados para cada carreira. Para instituições, o plano Enterprise traz contratação sob medida.</p>
 </section>
 
 <!-- ============ 09 PERGUNTAS ============ -->

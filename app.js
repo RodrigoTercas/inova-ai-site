@@ -7,15 +7,17 @@ const CONTATO = {
   email: 'contato@inovajur.com',
 };
 
-// Planos conforme a apresentação comercial de 18/11/2026.
+// Planos conforme a apresentação comercial de 18/11/2026. `mensal` em reais.
+// O anual segue a regra do InovaJur Cortex: 12% de desconto sobre doze mensalidades.
+const DESCONTO_ANUAL = 0.12;
 const PLANOS = [
-  { nome: 'Free', preco: 'Grátis', per: 'para sempre', para: 'Para experimentar o assistente dentro do PJe.',
+  { nome: 'Free', mensal: 0, para: 'Para experimentar o assistente dentro do PJe.',
     itens: ['10 interações por mês', 'Seus próprios prompts, sincronizados'], acao: 'Começar grátis' },
-  { nome: 'Pro', preco: 'R$ 140', per: 'por mês', para: 'Para quem usa o assistente no dia a dia dos processos.',
+  { nome: 'Pro', mensal: 140, para: 'Para quem usa o assistente no dia a dia dos processos.',
     itens: ['125 interações por mês', 'Biblioteca de prompts da InovaJur'], acao: 'Assinar o Pro' },
-  { nome: 'Ultra', preco: 'R$ 250', per: 'por mês', para: 'Para volume alto de processos e prazos.', destaque: true,
+  { nome: 'Ultra', mensal: 250, para: 'Para volume alto de processos e prazos.', destaque: true,
     itens: ['Interações ilimitadas', 'Biblioteca de prompts da InovaJur', 'Prioridade no atendimento', '!Assinatura do InovaJur Cortex incluída'], acao: 'Assinar o Ultra' },
-  { nome: 'Enterprise', preco: 'Sob consulta', per: 'por contrato', para: 'Para escritórios, procuradorias e órgãos.',
+  { nome: 'Enterprise', mensal: null, para: 'Para escritórios e instituições do sistema de justiça.',
     itens: ['Interações ilimitadas', 'Biblioteca de prompts da InovaJur', 'Condições e suporte negociados', 'Personalização para a organização'], acao: 'Pedir proposta' },
 ];
 
@@ -136,25 +138,43 @@ function aoVer(alvo, fn, margem = '0px 0px -12% 0px') {
 (function planos() {
   const lista = $('#lista-planos');
   if (!lista) return;
-  lista.replaceChildren(...PLANOS.map(p => {
+  const reais = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: Number.isInteger(v) ? 0 : 2 });
+  const anualDe = m => Math.round(m * 12 * (1 - DESCONTO_ANUAL) * 100) / 100;
+  let ciclo = 'anual';   // o anual é o plano em destaque, como no site do Cortex
+  // preço grande, sufixo e linha de apoio de cada plano no ciclo escolhido
+  function valores(p) {
+    if (p.mensal === null) return ['Sob consulta', 'por contrato', 'condições negociadas'];
+    if (p.mensal === 0) return ['Grátis', 'para sempre', 'sem cartão'];
+    if (ciclo === 'anual') { const a = anualDe(p.mensal); return [reais(a), 'por ano', `equivale a ${reais(Math.round(a / 12 * 100) / 100)} por mês`]; }
+    return [reais(p.mensal), 'por mês', `ou ${reais(anualDe(p.mensal))} por ano`];
+  }
+  const desenha = () => lista.replaceChildren(...PLANOS.map(p => {
     const c = document.createElement('article');
     c.className = 'plano rola' + (p.destaque ? ' plano--destaque' : '');
     if (p.destaque) c.append(Object.assign(document.createElement('span'), { className: 'plano__selo', textContent: 'Mais completo' }));
     const linha = (tag, cls, txt) => c.append(Object.assign(document.createElement(tag), { className: cls, textContent: txt }));
-    linha('p', 'plano__nome', p.nome); linha('p', 'plano__preco' + (p.preco.length > 8 ? ' plano__preco--texto' : ''), p.preco); linha('p', 'plano__per', p.per); linha('p', 'plano__para', p.para);
+    const [preco, per, extra] = valores(p);
+    linha('p', 'plano__nome', p.nome); linha('p', 'plano__preco' + (preco.length > 10 ? ' plano__preco--texto' : ''), preco); linha('p', 'plano__per', per); linha('p', 'plano__extra', extra); linha('p', 'plano__para', p.para);
     const ul = document.createElement('ul'); ul.className = 'plano__itens';
     p.itens.forEach(t => { const li = document.createElement('li'); if (t[0] === '!') { li.className = 'forte'; t = t.slice(1); } li.textContent = t; ul.append(li); });
     c.append(ul);
     const a = document.createElement('a');
     a.className = 'botao ' + (p.destaque ? 'botao--azul' : 'botao--linha');
-    a.href = zap(p.nome === 'Enterprise' ? 'Olá! Quero uma proposta do Inova.AI Enterprise para a minha organização.' : `Olá! Quero assinar o plano ${p.nome} do Inova.AI.`);
+    a.href = zap(p.nome === 'Enterprise' ? 'Olá! Quero uma proposta do Inova.AI Enterprise para a minha instituição.' : p.mensal ? `Olá! Quero assinar o plano ${p.nome} do Inova.AI no pagamento ${ciclo} (${preco} ${per}).` : `Olá! Quero começar pelo plano ${p.nome} do Inova.AI.`);
     a.target = '_blank'; a.rel = 'noopener';
     a.append(p.acao + ' ', Object.assign(document.createElement('span'), { textContent: '→', ariaHidden: 'true' }));
     c.append(a);
     return c;
   }));
+  desenha();
   $$('.rola', lista).forEach((el, i) => el.style.setProperty('--i', i));
   aoVer($$('.rola', lista), el => el.classList.add('visto'));
+  $$('.ciclo button').forEach(b => b.addEventListener('click', () => {
+    ciclo = b.dataset.ciclo;
+    $$('.ciclo button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    desenha();
+    $$('.plano', lista).forEach(el => el.classList.add('rola', 'visto'));
+  }));
 })();
 
 /* ---------- contatos ---------- */

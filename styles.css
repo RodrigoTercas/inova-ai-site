@@ -157,6 +157,9 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -.01em; font-weight: 700
 
 /* ---------- cartões ---------- */
 .tres { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.quatro { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.cartao--tinta .cartao__n { color: var(--azul); }
+.nota--tinta { color: var(--branco-suave); margin-top: 26px; }
 .cartao { background: #fff; border: 1px solid var(--linha-e); border-radius: 16px; padding: 28px; }
 .cartao__n { font-family: var(--mono); font-size: 13px; color: var(--azul-forte); margin-bottom: 26px; }
 .cartao h3 { margin-bottom: 10px; }
@@ -211,6 +214,11 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -.01em; font-weight: 700
 .regras b { color: var(--texto); font-weight: 700; }
 
 /* ---------- planos ---------- */
+.ciclo { display: inline-flex; padding: 4px; gap: 4px; border: 1px solid var(--linha-e); border-radius: 999px; margin-bottom: 30px; background: #fff; }
+.ciclo button { background: transparent; border: 0; padding: 10px 20px; border-radius: 999px; font-weight: 600; font-size: 14.5px; color: var(--texto); transition: background .2s, color .2s; }
+.ciclo button small { font-family: var(--mono); font-weight: 500; font-size: 11.5px; margin-left: 6px; color: var(--azul-forte); }
+.ciclo button[aria-pressed="true"] { background: var(--tinta); color: var(--claro); }
+.ciclo button[aria-pressed="true"] small { color: var(--grifo); }
 .planos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
 .plano { background: #fff; border: 1px solid var(--linha-e); border-radius: 20px; padding: 28px 24px; display: flex; flex-direction: column; position: relative; }
 .plano--destaque { background: var(--tinta); color: var(--claro); border-color: var(--tinta); box-shadow: 0 40px 90px -40px rgba(10, 111, 214, .7); }
@@ -219,6 +227,8 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -.01em; font-weight: 700
 .plano--destaque .plano__nome { color: var(--branco-suave); }
 .plano__preco { font-size: clamp(36px, 3.4vw, 50px); line-height: 1; font-weight: 800; letter-spacing: -.03em; font-variation-settings: "wdth" 112; margin: 14px 0 4px; font-variant-numeric: tabular-nums; }
 .plano__preco--texto { font-size: clamp(30px, 2.6vw, 38px); }
+.plano__extra { font-family: var(--mono); font-size: 12.5px; color: var(--texto-suave); margin-top: 4px; min-height: 1.5em; }
+.plano--destaque .plano__extra { color: var(--branco-suave); }
 .plano__per { font-size: 14px; color: var(--texto-suave); }
 .plano--destaque .plano__per { color: var(--branco-suave); }
 .plano__para { font-size: 15px; margin: 16px 0 18px; min-height: 3em; }
@@ -275,6 +285,7 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -.01em; font-weight: 700
   .botao--topo { margin-left: auto; }
   .planos { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
   .recursos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quatro { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 880px) {
   body { font-size: 16px; }
@@ -288,7 +299,7 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -.01em; font-weight: 700
   .rodape { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .planos, .recursos { grid-template-columns: 1fr; }
+  .planos, .recursos, .quatro { grid-template-columns: 1fr; }
   .cena { height: 430px; }
   .autos { width: 86%; top: 0; height: 60%; }
   .painel { width: 74%; top: 22%; height: 78%; }
