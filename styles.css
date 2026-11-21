@@ -229,6 +229,9 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -.01em; font-weight: 700
 .plano__preco--texto { font-size: clamp(30px, 2.6vw, 38px); }
 .plano__extra { font-family: var(--mono); font-size: 12.5px; color: var(--texto-suave); margin-top: 4px; min-height: 1.5em; }
 .plano--destaque .plano__extra { color: var(--branco-suave); }
+.plano__ref { display: inline-block; align-self: flex-start; margin-top: 10px; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--claro-2); color: var(--texto); }
+.plano--destaque .plano__ref { background: var(--tinta-3); color: var(--claro); }
+.plano__ref--vazio { visibility: hidden; }
 .plano__per { font-size: 14px; color: var(--texto-suave); }
 .plano--destaque .plano__per { color: var(--branco-suave); }
 .plano__para { font-size: 15px; margin: 16px 0 18px; min-height: 3em; }
