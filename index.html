@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inova.AI — a IA que trabalha dentro do PJe</title>
+<meta name="description" content="Assistente jurídico com inteligência artificial que abre ao lado dos autos no PJe: lê o processo, resume, minuta e usa os seus assistentes virtuais.">
+<meta name="theme-color" content="#0B0E17">
+<link rel="icon" href="img/brasao.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Spline+Sans+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo" id="topo">
+  <a class="marca" href="#inicio" aria-label="Inova.AI, início">
+    <img src="img/brasao.svg" width="36" height="36" alt="">
+    <span>Inova<b>.AI</b></span>
+  </a>
+  <nav class="menu" aria-label="Seções">
+    <a href="#como">Como funciona</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#assistentes">Assistentes</a>
+    <a href="#planos">Planos</a>
+    <a href="#perguntas">Perguntas</a>
+  </nav>
+  <a class="botao botao--azul botao--topo" href="#planos">Adquira o seu já <span aria-hidden="true">→</span></a>
+</header>
+
+<main id="conteudo">
+
+<!-- ============ ABERTURA ============ -->
+<section class="abertura" id="inicio">
+  <div class="abertura__texto">
+    <p class="selo surge" style="--d:0"><span class="selo__ponto"></span>Extensão para o Google Chrome · PJe</p>
+    <h1 class="surge" style="--d:1">A IA que trabalha <mark>dentro</mark> do PJe.</h1>
+    <p class="lead surge" style="--d:2">O Inova.AI abre ao lado dos autos, lê o processo que está na tela e responde, resume e minuta com base nele. Sem copiar e colar peça por peça.</p>
+    <div class="abertura__cta surge" style="--d:3">
+      <a class="botao botao--azul" href="#planos">Adquira o seu já <span aria-hidden="true">→</span></a>
+      <a class="botao botao--linha" href="#como">Ver como funciona</a>
+    </div>
+    <ul class="fatos surge" style="--d:4">
+      <li><b>Lê os autos</b> linha do tempo e peças</li>
+      <li><b>Minuta no PJe</b> a partir das peças</li>
+      <li><b>Seus assistentes</b> prontos ou criados por você</li>
+    </ul>
+  </div>
+
+  <!-- maquete viva: os autos e o painel lado a lado -->
+  <figure class="cena surge" style="--d:2" aria-label="Ilustração: o PJe à esquerda e o painel do Inova.AI à direita, respondendo a um pedido de resumo">
+    <div class="autos" aria-hidden="true">
+      <div class="autos__barra"><i></i><i></i><i></i><span>pje · autos digitais</span></div>
+      <div class="autos__corpo">
+        <p class="autos__proc">Processo 0000000-00.2026.8.10.0000</p>
+        <ol class="linha-tempo">
+          <li><b>Petição inicial</b><span>pdf · 14 pág.</span></li>
+          <li><b>Citação</b><span>certidão</span></li>
+          <li><b>Contestação</b><span>pdf · 9 pág.</span></li>
+          <li><b>Documentos</b><span>pdf · 22 pág.</span></li>
+          <li><b>Réplica</b><span>pdf · 6 pág.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="painel" aria-hidden="true">
+      <div class="painel__topo">
+        <img src="img/brasao.svg" width="26" height="26" alt="">
+        <p>Inova.AI<small>INOVAJUR<i>.</i></small></p>
+      </div>
+      <div class="painel__corpo" id="conversa">
+        <div class="vazio" id="vazio">
+          <img src="img/brasao.svg" width="44" height="44" alt="">
+          <p class="vazio__t">Como posso ajudar neste processo?</p>
+          <div class="vazio__atalhos"><span id="atalho">Resumir processo</span><span>Relatório</span><span>Partes</span></div>
+        </div>
+      </div>
+      <div class="painel__caixa">
+        <span id="caixa-texto">Use @ para citar os documentos, / para prompts</span>
+        <i class="painel__enviar">Enviar</i>
+      </div>
+    </div>
+    <figcaption>Ilustração com processo fictício. Os passos “Consultando a timeline” e “Lendo” são os que o painel mostra de verdade.</figcaption>
+  </figure>
+</section>
+
+<!-- ============ 01 PROBLEMA ============ -->
+<section class="secao secao--claro" id="problema">
+  <header class="cab">
+    <p class="mov"><span>01</span>O problema</p>
+    <h2 class="rola">O processo está no PJe.<br>A IA fica <mark>em outra aba.</mark></h2>
+  </header>
+  <div class="tres">
+    <article class="cartao rola"><p class="cartao__n">a</p><h3>Copiar e colar</h3><p>Cada peça precisa ser aberta, copiada e colada no chat, uma por uma.</p></article>
+    <article class="cartao rola"><p class="cartao__n">b</p><h3>Volume e prazo</h3><p>Muitos processos, autos longos e pouco tempo para ler tudo antes de agir.</p></article>
+    <article class="cartao rola"><p class="cartao__n">c</p><h3>Resposta sem lastro</h3><p>Sem acesso aos autos, a resposta sai genérica e precisa ser refeita.</p></article>
+  </div>
+</section>
+
+<!-- ============ 02 COMO FUNCIONA ============ -->
+<section class="secao secao--claro secao--colada" id="como">
+  <header class="cab">
+    <p class="mov"><span>02</span>Como funciona</p>
+    <h2 class="rola">Abre ao lado dos autos,<br><mark>em um clique.</mark></h2>
+  </header>
+  <div class="como">
+    <ol class="passos">
+      <li class="rola"><span>1</span><div><h3>Abra o processo no PJe</h3><p>O botão do Inova.AI aparece na própria página, num canto que você escolhe.</p></div></li>
+      <li class="rola"><span>2</span><div><h3>Clique no botão</h3><p>O painel abre na lateral do Chrome, sem sair dos autos.</p></div></li>
+      <li class="rola"><span>3</span><div><h3>Pergunte ou chame um assistente</h3><p>Resumo, relatório, partes, última movimentação. Para a peça, use um assistente virtual.</p></div></li>
+    </ol>
+    <figure class="tela rola">
+      <img src="img/painel.png" width="756" height="1392" loading="lazy" alt="Tela inicial do painel do Inova.AI, com a pergunta “Como posso ajudar neste processo?”, os atalhos e a caixa de mensagem">
+      <figcaption>Tela real do painel.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 03 RECURSOS ============ -->
+<section class="secao secao--tinta" id="recursos">
+  <header class="cab">
+    <p class="mov"><span>03</span>O que ele faz</p>
+    <h2 class="rola">Seis recursos para o dia a dia<br><mark>do processo.</mark></h2>
+  </header>
+  <div class="recursos">
+    <article class="recurso rola">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 4h11l5 5v19H8z M19 4v5h5 M12 15h8 M12 19h8 M12 23h5"/></svg>
+      <h3>Lê os autos</h3><p>Linha do tempo, movimentações e o conteúdo das peças do processo aberto, em HTML ou PDF.</p>
+    </article>
+    <article class="recurso rola">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26l4-1 13-13-3-3L7 22z M18 11l3 3 M6 29h20"/></svg>
+      <h3>Minuta no PJe</h3><p>Petições, manifestações e minutas redigidas a partir das peças, sem trocar de sistema.</p>
+    </article>
+    <article class="recurso rola">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M21 9l-9 9a3 3 0 0 0 4 4l10-10a5 5 0 0 0-7-7L8 16a7 7 0 0 0 10 10l7-7"/></svg>
+      <h3>Aceita anexos</h3><p>Até 5 arquivos por mensagem: imagens e PDF, inclusive digitalizado.</p>
+    </article>
+    <article class="recurso rola">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M5 16h22 M16 5c4 4 4 18 0 22 M16 5c-4 4-4 18 0 22"/></svg>
+      <h3>Busca na web</h3><p>Liga e desliga em um clique, quando a resposta pede fonte externa.</p>
+    </article>
+    <article class="recurso rola">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 4h11l5 5v19H8z M11 14l2 8 3-6 3 6 2-8"/></svg>
+      <h3>Salva em Word</h3><p>Gera o arquivo .docx do texto produzido, quando você pedir.</p>
+    </article>
+    <article class="recurso rola">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M16 10v6l4 3 M5 16H2 M6 9 4 7"/></svg>
+      <h3>Guarda o histórico</h3><p>As conversas ficam salvas para você retomar depois, do ponto onde parou.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 04 ASSISTENTES ============ -->
+<section class="secao secao--tinta secao--colada" id="assistentes">
+  <header class="cab">
+    <p class="mov"><span>04</span>Assistentes virtuais</p>
+    <h2 class="rola">Assistentes sob medida.<br><mark>E os seus.</mark></h2>
+  </header>
+  <div class="biblio">
+    <div class="biblio__texto">
+      <div class="abas rola" role="tablist" aria-label="Biblioteca">
+        <button role="tab" id="aba-prompts" aria-controls="painel-biblio" aria-selected="true" data-aba="prompts">Assistentes</button>
+        <button role="tab" id="aba-skills" aria-controls="painel-biblio" aria-selected="false" data-aba="skills">Skills</button>
+      </div>
+      <div class="biblio__itens rola">
+        <div><h3>Assistentes personalizados</h3><p>Prontos para tarefas do processo, como análise, relatório e minuta. Você escolhe e aplica com <kbd>/</kbd> na conversa.</p></div>
+        <div><h3>Crie os seus</h3><p>Monte assistentes com as suas teses e os seus modelos. Ficam sincronizados na sua conta.</p></div>
+        <div><h3>Skills</h3><p>Procedimentos completos, importados de um arquivo, como no Claude. A IA usa quando o caso aparece.</p></div>
+      </div>
+    </div>
+    <figure class="biblio__tela rola" id="painel-biblio" role="tabpanel" aria-labelledby="aba-prompts">
+      <img id="biblio-img" src="img/biblioteca-prompts.png" width="768" height="1474" loading="lazy" alt="Biblioteca do Inova.AI na aba de assistentes, com a lista de assistentes virtuais">
+      <figcaption id="biblio-leg">Tela real da Biblioteca, aba de assistentes.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 05 CORTEX ============ -->
+<section class="secao secao--azul" id="cortex">
+  <header class="cab">
+    <p class="mov"><span>05</span>InovaJur Cortex</p>
+    <h2 class="rola">Conecte o cérebro<br>e amplie a base de conhecimento.</h2>
+  </header>
+  <div class="cortex">
+    <p class="cortex__lead rola">Ligado ao InovaJur Cortex, o assistente passa a consultar as suas memórias, teses e anotações durante a conversa, dentro do PJe.</p>
+    <div class="cortex__selo rola">
+      <p>Incluído no plano</p>
+      <b>Ultra</b>
+      <a href="https://inovajurcortex.com/cortexpessoal/" rel="noopener" target="_blank">Conhecer o Cortex <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 CONTROLE ============ -->
+<section class="secao secao--claro" id="controle">
+  <header class="cab">
+    <p class="mov"><span>06</span>Controle</p>
+    <h2 class="rola">Você no comando<br><mark>de cada passo.</mark></h2>
+  </header>
+  <ul class="regras">
+    <li class="rola"><b>A busca na web</b> só roda quando você liga.</li>
+    <li class="rola"><b>A minuta</b> é sugestão: quem revisa, ajusta e decide é você.</li>
+    <li class="rola"><b>Toda tela lembra:</b> respostas geradas por IA podem conter erros. Confira nos autos e nas fontes oficiais.</li>
+  </ul>
+</section>
+
+<!-- ============ 07 PLANOS ============ -->
+<section class="secao secao--claro secao--colada" id="planos">
+  <header class="cab">
+    <p class="mov"><span>07</span>Planos</p>
+    <h2 class="rola">Do teste gratuito<br><mark>ao contrato sob medida.</mark></h2>
+  </header>
+  <div class="planos" id="lista-planos"></div>
+  <p class="nota">Pagamento por cartão de crédito, na página segura do Stripe. Renovação automática; cancele quando quiser.</p>
+</section>
+
+<!-- ============ 08 PARA QUEM ============ -->
+<section class="secao secao--tinta" id="publico">
+  <header class="cab">
+    <p class="mov"><span>08</span>Para quem</p>
+    <h2 class="rola">Para quem trabalha<br><mark>no processo eletrônico.</mark></h2>
+  </header>
+  <div class="tres">
+    <article class="cartao cartao--tinta rola"><h3>Advocacia</h3><p>Leitura dos autos, resumo do andamento e minuta da peça, sem sair do PJe.</p></article>
+    <article class="cartao cartao--tinta rola"><h3>Escritórios</h3><p>Plano Enterprise, com personalização para a banca e suporte negociado.</p></article>
+    <article class="cartao cartao--tinta rola"><h3>Procuradorias e órgãos</h3><p>Para o volume alto de processos: relatório rápido dos autos e contratação sob medida.</p></article>
+  </div>
+</section>
+
+<!-- ============ 09 PERGUNTAS ============ -->
+<section class="secao secao--claro" id="perguntas">
+  <header class="cab">
+    <p class="mov"><span>09</span>Perguntas</p>
+    <h2 class="rola">O que costumam<br><mark>perguntar.</mark></h2>
+  </header>
+  <div class="faq">
+    <details class="rola"><summary>Preciso instalar alguma coisa?</summary><p>Só a extensão do Inova.AI no Google Chrome. Depois, é entrar com a sua conta InovaJur e abrir um processo no PJe.</p></details>
+    <details class="rola"><summary>Como o assistente sabe qual é o processo?</summary><p>Ele lê o processo que está aberto na tela: a linha do tempo, as movimentações e as peças que você permitir abrir.</p></details>
+    <details class="rola"><summary>Posso usar os meus próprios modelos?</summary><p>Sim. Crie assistentes com as suas instruções ou importe skills completas. No plano Ultra, conecte também o InovaJur Cortex.</p></details>
+    <details class="rola"><summary>A resposta substitui a minha análise?</summary><p>Não. O Inova.AI apoia a leitura e a redação; a conferência nos autos e nas fontes oficiais, e a decisão, continuam com você.</p></details>
+    <details class="rola"><summary>Como funciona a cobrança?</summary><p>Por cartão de crédito, na página segura do Stripe, com renovação automática. Você pode cancelar quando quiser e continua com o plano até o fim do período já pago.</p></details>
+  </div>
+</section>
+
+<!-- ============ FECHO ============ -->
+<section class="fecho" id="comecar">
+  <p class="selo selo--claro rola"><span class="selo__ponto"></span>Comece pelo plano Free</p>
+  <h2 class="rola">Os autos de um lado.<br><mark>O assistente do outro.</mark></h2>
+  <p class="fecho__cta rola">
+    <a class="botao botao--azul" href="#planos">Adquira o seu já <span aria-hidden="true">→</span></a>
+    <a class="botao botao--linha" id="fecho-whats" href="#" target="_blank" rel="noopener">Falar com a gente</a>
+  </p>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="rodape__marca">
+    <img src="img/brasao.svg" width="40" height="40" alt="">
+    <p>Inova<b>.AI</b><br><span>assistente jurídico com inteligência artificial</span></p>
+  </div>
+  <ul>
+    <li><a href="#como">Como funciona</a></li>
+    <li><a href="#planos">Planos</a></li>
+    <li><a href="#perguntas">Perguntas</a></li>
+    <li><a href="https://inovajurcortex.com/cortexpessoal/" rel="noopener" target="_blank">InovaJur Cortex</a></li>
+  </ul>
+  <ul>
+    <li><a id="rodape-whats" href="#" target="_blank" rel="noopener"></a></li>
+    <li><a id="rodape-email" href="#"></a></li>
+  </ul>
+  <p class="rodape__legal">© <span id="ano">2026</span> InovaJur · Capacitação Jurídica e IA. PJe é sistema do Conselho Nacional de Justiça; o Inova.AI é uma extensão independente, sem vínculo oficial com o CNJ ou com os tribunais. Google Chrome é marca do Google. Respostas geradas por IA podem conter erros: confira nos autos e nas fontes oficiais.</p>
+</footer>
+
+<a class="adquira" href="#planos" aria-label="Adquira o seu já">
+  <svg viewBox="0 0 128 128" aria-hidden="true">
+    <path id="aro" d="M64,64 m-49,0 a49,49 0 1,1 98,0 a49,49 0 1,1 -98,0" fill="none"/>
+    <text><textPath href="#aro" textLength="304" lengthAdjust="spacing">ADQUIRA O SEU JÁ · ADQUIRA O SEU JÁ · </textPath></text>
+  </svg>
+  <span class="adquira__miolo" aria-hidden="true">→</span>
+</a>
+
+<script src="app.js" defer></script>
+</body>
+</html>

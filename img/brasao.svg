@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="InovaJur">
+  <circle cx="64" cy="64" r="64" fill="#000"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- trilhas de circuito -->
+    <g class="circuito" stroke-width="1.5">
+      <g stroke="#3f5bf0">
+        <path d="M56 34H44V26"/><circle cx="44" cy="23.500" r="2.500"/>
+        <path d="M52 58H40V50H31"/><circle cx="28.500" cy="50" r="2.500"/>
+        <path d="M56 72H47V80"/><circle cx="47" cy="82.500" r="2.500"/>
+        <path d="M72 52H86V60"/><circle cx="86" cy="62.500" r="2.500"/>
+        <path d="M76 76H84"/><circle cx="86.500" cy="76" r="2.500"/>
+      </g>
+      <g stroke="#38bdf8">
+        <path d="M72 30H82V22"/><circle cx="82" cy="19.500" r="2.500"/>
+        <path d="M76 64H82"/><circle cx="84.500" cy="64" r="2.500"/>
+        <path d="M54 66H46"/><circle cx="43.500" cy="66" r="2.500"/>
+        <path d="M74 38H90V30"/><circle cx="90" cy="27.500" r="2.500"/>
+        <path d="M54 46H38V38"/><circle cx="38" cy="35.500" r="2.500"/>
+      </g>
+    </g>
+    <!-- balança -->
+    <g class="balanca" stroke="#fff" stroke-width="3">
+      <path d="M43 106h42l-4-7H47z"/>
+      <path d="M51 99l3-6h20l3 6"/>
+      <path d="M59.500 93V50M68.500 93V50" stroke="#bfe9ff"/>
+      <path d="M59.500 93a4.500 4.500 0 0 1 9 0"/>
+      <circle cx="64" cy="43" r="7.500"/>
+      <circle cx="64" cy="43" r="2.600"/>
+      <circle cx="64" cy="29" r="4.800"/>
+      <path d="M56.500 41H26v5h31M71.500 41H102v5H71"/>
+      <path d="M30 46L19 76M30 46l11 30"/>
+      <path d="M16 76h28a14 14 0 0 1-28 0z"/>
+      <path d="M98 46L87 76M98 46l11 30"/>
+      <path d="M84 76h28a14 14 0 0 1-28 0z"/>
+    </g>
+  </g>
+</svg>
